@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.API", "PaymentGateway.API\PaymentGateway.API.csproj", "{254D5929-B264-4199-8D0C-748A8F38BDCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Persistence", "PaymentGateway.Persistence\PaymentGateway.Persistence.csproj", "{905F520D-BEBC-4785-8D33-498F7AD28489}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Shared", "PaymentGateway.Shared\PaymentGateway.Shared.csproj", "{672757BE-911B-406D-BDD2-DC7C1648B547}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Domain", "PaymentGateway.Domain\PaymentGateway.Domain.csproj", "{5C6CDBC1-29E3-4279-A753-F3598FB54FD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Domain.Tests", "PaymentGateway.Domain.Tests\PaymentGateway.Domain.Tests.csproj", "{879AF5D8-CDDB-4AFD-A8E1-575DAC21EEFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1402545-902E-4AA7-B5A3-1EDC65E040E4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+		run.ps1 = run.ps1
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.API.Tests", "PaymentGateway.API.Tests\PaymentGateway.API.Tests.csproj", "{5CC133A9-9064-4D8C-8274-6BF899AEA5A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Shared.Tests", "PaymentGateway.Shared.Tests\PaymentGateway.Shared.Tests.csproj", "{A770098C-2719-4C17-8471-6ABB0163C7A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{254D5929-B264-4199-8D0C-748A8F38BDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254D5929-B264-4199-8D0C-748A8F38BDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254D5929-B264-4199-8D0C-748A8F38BDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254D5929-B264-4199-8D0C-748A8F38BDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905F520D-BEBC-4785-8D33-498F7AD28489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905F520D-BEBC-4785-8D33-498F7AD28489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905F520D-BEBC-4785-8D33-498F7AD28489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905F520D-BEBC-4785-8D33-498F7AD28489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672757BE-911B-406D-BDD2-DC7C1648B547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672757BE-911B-406D-BDD2-DC7C1648B547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672757BE-911B-406D-BDD2-DC7C1648B547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672757BE-911B-406D-BDD2-DC7C1648B547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C6CDBC1-29E3-4279-A753-F3598FB54FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C6CDBC1-29E3-4279-A753-F3598FB54FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C6CDBC1-29E3-4279-A753-F3598FB54FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C6CDBC1-29E3-4279-A753-F3598FB54FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879AF5D8-CDDB-4AFD-A8E1-575DAC21EEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879AF5D8-CDDB-4AFD-A8E1-575DAC21EEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879AF5D8-CDDB-4AFD-A8E1-575DAC21EEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879AF5D8-CDDB-4AFD-A8E1-575DAC21EEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC133A9-9064-4D8C-8274-6BF899AEA5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC133A9-9064-4D8C-8274-6BF899AEA5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC133A9-9064-4D8C-8274-6BF899AEA5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC133A9-9064-4D8C-8274-6BF899AEA5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A770098C-2719-4C17-8471-6ABB0163C7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A770098C-2719-4C17-8471-6ABB0163C7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A770098C-2719-4C17-8471-6ABB0163C7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A770098C-2719-4C17-8471-6ABB0163C7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4803852C-6671-4C57-9BD3-301707DB3C02}
+	EndGlobalSection
+EndGlobal
