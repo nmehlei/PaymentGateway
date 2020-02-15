@@ -113,3 +113,7 @@ by the merchant during its reconciliation processes to find those cases.
 ## Further validation
 
 The request validation currently focuses on the Merchant ID and API Key. A useful addition to that would be validation of the request models, for example via Fluent Data Annotations.
+
+## Known issue: Entity Framework Core warning
+
+Entity Framework Core displays a small warning about alleged usage of an internal API. This is most likely just a display bug that can be ignored, but should be further investigated and corrected when continuing development.

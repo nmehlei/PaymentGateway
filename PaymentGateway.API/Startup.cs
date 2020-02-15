@@ -99,7 +99,7 @@ namespace PaymentGateway.API
                     var dataContext = app.ApplicationServices.GetService<DataContext>();
                     dataContext.Database.Migrate();
                 }
-                catch (SqlException exc)
+                catch (SqlException)
                 {
                     // SQL server might not be available yet, let's retry in a moment
 
