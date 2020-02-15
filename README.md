@@ -72,7 +72,7 @@ The solution was prepared as a complete self-contained ready-to-use environment 
 
 > run.ps1
 
-Afterwards, the API will be accessible under http://localhost:5000/. Please use the provided Postman requests to try out the API.
+Afterwards, the API will be accessible under http://localhost:7000/. Please use the provided Postman requests to try out the API.
 
 # Notes regarding global code decisions
 
