@@ -19,7 +19,7 @@ For simplified portability, the API code was built with **Docker** container and
 In the subdirectory *API-Spec* a file named *swagger.json* includes **Swagger/OpenAPI**-compliant (version 3) API specification.
 After starting the application, an online UI to display this specification can be accessed under:
 
-> http://localhost:5000/swagger/index.html
+> http://localhost:7000/swagger/index.html
 
 ## Postman requests
 
@@ -113,7 +113,3 @@ by the merchant during its reconciliation processes to find those cases.
 ## Further validation
 
 The request validation currently focuses on the Merchant ID and API Key. A useful addition to that would be validation of the request models, for example via Fluent Data Annotations.
-
-## Known issue: Entity Framework Core warning
-
-Entity Framework Core displays a small warning about alleged usage of an internal API. This is most likely just a display bug that can be ignored, but should be further investigated and corrected when continuing development.

@@ -10,21 +10,15 @@
         "tags": [
           "Payments"
         ],
+        "summary": "Retrieve the details of a previously made payment",
         "parameters": [
           {
             "name": "PaymentId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "paymentId",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -72,27 +66,27 @@
         }
       }
     },
-    "/Payments": {
+    "/Payments/create": {
       "post": {
         "tags": [
           "Payments"
         ],
-        "summary": "",
+        "summary": "Process a payment through the payment gateway and receive either a successful or unsuccessful response",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PostPaymentRequestModel"
+                "$ref": "#/components/schemas/CreatePaymentRequestModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PostPaymentRequestModel"
+                "$ref": "#/components/schemas/CreatePaymentRequestModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PostPaymentRequestModel"
+                "$ref": "#/components/schemas/CreatePaymentRequestModel"
               }
             }
           }
@@ -103,17 +97,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostPaymentResponseModel"
+                  "$ref": "#/components/schemas/CreatePaymentResponseModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostPaymentResponseModel"
+                  "$ref": "#/components/schemas/CreatePaymentResponseModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostPaymentResponseModel"
+                  "$ref": "#/components/schemas/CreatePaymentResponseModel"
                 }
               }
             }
@@ -144,6 +138,13 @@
   },
   "components": {
     "schemas": {
+      "PaymentStatusCode": {
+        "enum": [
+          "PaymentSuccess",
+          "PaymentFailure"
+        ],
+        "type": "string"
+      },
       "CreditCardModel": {
         "type": "object",
         "properties": {
@@ -178,6 +179,21 @@
             "format": "uuid"
           },
           "externalShopperIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PaymentStatusCode"
+              }
+            ]
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currencyCode": {
             "type": "string",
             "nullable": true
           },
@@ -221,15 +237,49 @@
         },
         "additionalProperties": false
       },
-      "PostPaymentRequestModel": {
+      "CreatePaymentRequestModel": {
         "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalShopperIdentifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "creditCardNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "creditCardExpiryMonth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "creditCardExpiryYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "creditCardCcv": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
         "additionalProperties": false
       },
-      "PostPaymentResponseModel": {
+      "CreatePaymentResponseModel": {
         "type": "object",
         "properties": {
           "wasPaymentSuccessful": {
             "type": "boolean"
+          },
+          "paymentId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
