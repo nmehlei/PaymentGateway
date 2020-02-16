@@ -1,6 +1,6 @@
 # Overview
-This is an example project based on a Payment Gateway API that can act as an API for merchants to offer a way for shoppers to pay for a product.
-The project was implemented as an ASP.NET Core project with .NET Core 3.1.
+This is an example project of a Payment Gateway API that allows merchants to offer a way for shoppers to pay for a product.
+The project is implemented as an ASP.NET Core project with .NET Core 3.1.
 
 The solution contains the following projects (excluding unit test projects):
 * PaymentGateway.API, containing the API service
@@ -12,7 +12,7 @@ The solution contains the following projects (excluding unit test projects):
 
 ## Containerization
 
-For simplified portability, the API code was built with **Docker** container and Docker-compose orchestration support. The orchestration includes two services, the API itself and an SQL server container, both Linux-based.
+For simplified portability, the API was implemented with **Docker** container and Docker-compose orchestration support. The orchestration includes two services, the API itself and an SQL server container, both Linux-based.
 
 ## API specification
 
@@ -57,7 +57,7 @@ The domain model can be persisted with the help of Entity Framework Core.
 This logic was moved to a separate project to abstract away all persistence concerns from the domain model.
 
 Three merchants are automatically included as Seed data.
-Concurrency is handled with the help of a timestamp value that is updated on every database change operation.
+Concurrency is handled with the help of a timestamp value that is updated on every database change operation. Primary keys are GUID-based for both payments and merchants with sequential GUID generation for improved performance.
 
 ## Instrumentation, metrics and logging
 
@@ -76,9 +76,9 @@ Afterwards, the API will be accessible under http://localhost:7000/. Please use 
 
 # Notes regarding global code decisions
 
-## HTTPS/TLS termination via reverse-proxy
+## HTTPS/TLS termination via reverse proxy
 
-The API inside the docker container offers an HTTP port (and not HTTPS) because a reverse-proxy (like nginx, Traefik, Azure Application Gateway, etc.) is assumed to be in front of the API to handle HTTPS/TLS termination and offloading. This allows the container and API to be decoupled from the complexity of SSL certificates.
+The API inside the docker container offers an HTTP port (and not HTTPS) because a reverse proxy (like nginx, Traefik, Azure Application Gateway, etc.) is assumed to be in front of the API to handle HTTPS/TLS termination and offloading. This allows the container and API to be decoupled from the complexity of SSL certificates.
 
 ## Sync process & async processing
 
@@ -90,7 +90,7 @@ those requests with asynchronous operations for increased scalability.
 I opted to omit the “Async” suffix from Aggregate method names to not blur the Ubiquitous Language of the domain model with technical implementation details.
 In all other cases, the best practice from Microsoft (see: https://docs.microsoft.com/en-us/dotnet/csharp/async) was followed and the Suffix was added.
 
-## Domain modeling: Payment vs PaymentRequest
+## Domain modeling: Payment vs Payment Request
 
 The merchant requests that a payment shall happen, though a payment is defined as money actually being transferred. As this can fail, one could argue (and this would get more clear very fast while discussing this issue with a domain expert) that the main aggregate is not a payment and instead should be a payment request. As the requirement document in most occurences defines this as a payment it was opted to use payment though in actual discussions with a domain expert this would be the first topic that would have been discussed.
 
